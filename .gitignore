@@ -1,0 +1,14 @@
+*~
+composer.json
+composer.lock
+vendor/*
+modules/*
+settings/config.php
+modules/admin/config
+!modules/admin
+!modules/lang
+!modules/media
+!modules/welcome
+views/*
+!views/default
+

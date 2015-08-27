@@ -1,0 +1,26 @@
+<?php
+
+use PhangoApp\PhaModels\Webmodel;
+use PhangoApp\PhaRouter\Routes;
+
+Routes::$root_url='/parameciop/';
+
+Routes::$app='app';
+
+Routes::$apps=['app', 'lang', 'admin', 'trial'];
+
+/**
+* Configure database. You can configure multiple databases for different models.
+*/ 
+
+Webmodel::$host_db['default']='localhost';
+	
+Webmodel::$db['default']='paramecio2';
+
+Webmodel::$login_db['default']='root';
+
+Webmodel::$pass_db['default']='sirena';
+
+define('SENDER_EMAIL', 'cms@web-t-sys.com');
+
+?>
