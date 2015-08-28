@@ -41,6 +41,9 @@ function AusersAdmin()
 			$admin=new GenerateAdminClass('user_admin', AdminUtils::set_admin_link('ausers', array('op' => 0)));
 			
 			$admin->list->arr_fields=array('IdUser_admin', 'user_admin', 'privileges_user');
+			$admin->list->set_fields_showed($admin->list->arr_fields);
+			
+			$admin->list->order_field='IdUser_admin';
 			
 			$admin->list->order=1;
 			
