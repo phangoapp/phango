@@ -20,7 +20,14 @@ function AdminListView($admin)
         
         $select=new SelectForm('field_search', $_GET['field_search']);
         
-        $select->arr_select=$admin->list->load_fields_showed($admin->list->arr_fields_no_search);
+        //$select->arr_select=$admin->list->load_fields_showed($admin->list->arr_fields_no_search);
+        
+        foreach($admin->list->arr_fields_search as $field)
+        {
+        
+            $select->arr_select[$field]=Webmodel::$model[$admin->model_name]->forms[$field]->label;
+        
+        }
         
         $select_order=new SelectForm('order', $_GET['order']);
         
@@ -30,7 +37,7 @@ function AdminListView($admin)
         
         
         ?>
-        <div class="cont">
+        <div class="cont search">
             <form method="get" action="<?php echo $admin->url; ?>">
                 <?php echo I18n::lang('common', 'search', 'Search'); ?>
                 <?php echo $search->form(); ?>

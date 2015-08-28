@@ -15,7 +15,7 @@ use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaView\View;
 
 Webmodel::load_model('modules/admin/models/models_admin');
-Utils::load_config('admin', 'modules/admin/config/config_admin');
+Utils::load_config('config_admin', 'modules/admin/config/');
 I18n::load_lang('admin');
 
 #Utils::load_libraries('loginclass');
@@ -27,7 +27,7 @@ class indexController extends Controller {
 
 	public function home($module_id='none')
 	{
-	
+        
 		class_alias('indexController', 'AdminSwitchClass');
 		
 		AdminSwitchClass::$login=new LoginClass(Webmodel::$model['user_admin'], 'username', 'password', '', $arr_user_session=array('IdUser_admin', 'privileges_user', 'username', 'token_client'), $arr_user_insert=array('username', 'password', 'repeat_password', 'email'));
