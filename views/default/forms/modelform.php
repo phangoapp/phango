@@ -13,6 +13,10 @@ function ModelFormView($arr_form, $fields=array())
 
     }
 
+    ?>
+    <div class="form">
+    <?php
+    
     foreach($fields as $field)
     {
 
@@ -37,6 +41,9 @@ function ModelFormView($arr_form, $fields=array())
         }
 
     }
+    ?>
+    </div>
+    <?php
 
 }
 

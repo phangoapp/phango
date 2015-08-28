@@ -216,6 +216,15 @@ h1
 
 /*Styles for common templates...*/
 
+.form {
+    
+    border: solid #cbcbcb 1px;
+    padding:10px;
+    margin:10px 0px 10px 0px;
+    border-radius:5px;
+    
+}
+
 .form textarea {
 
 	width:100%;
@@ -334,6 +343,7 @@ margin-right:auto;
     
     border-width: 1px;
     border-radius:5px;
+    margin-top:5px;
     
 }
 
