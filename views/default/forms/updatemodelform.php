@@ -7,7 +7,7 @@ function UpdateModelFormView($arr_form, $fields, $method, $action, $enctype)
 {
 
     ?>
-    <form method="<?php echo $method; ?>" action="<?php echo $action; ?>" enctype="<?php echo $enctype; ?>">
+    <form method="<?php echo $method; ?>" action="<?php echo $action; ?>" <?php echo $enctype; ?>>
     <?php
 
     echo View::load_view(array($arr_form, $fields), 'forms/modelform');
