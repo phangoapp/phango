@@ -9,7 +9,7 @@ View::$php_file=Routes::$root_url.'showmedia.php';
 * Property that define the static when you will go to production.
 */
 
-View::$url_media='/media';
+View::$url_media=Routes::$root_url.'media';
 
 //View::$root_path=PhangoVar::$base_path;
 
