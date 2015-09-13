@@ -39,6 +39,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	
 	/**
 	* @depends testCreateTable
+	* @depends testInsertRow
 	*/
 	
 	public function testUpdateRow()
@@ -53,7 +54,36 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	/**
 	* @depends testCreateTable
 	* @depends testInsertRow
+	*/
+	
+	public function testSelectRow()
+	{
+		global $table_test;
+		
+		$query=$table_test->select();
+		
+		$this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name'), $table_test->fetch_array($query));
+	
+	}
+	
+	/**
+	* @depends testCreateTable
+	* @depends testInsertRow
+	*/
+	
+	public function testSelectCountRow()
+	{
+		global $table_test;
+		
+		$this->assertEquals(1, $table_test->select_count());
+	
+	}
+	
+	/**
+	* @depends testCreateTable
+	* @depends testInsertRow
 	* @depends testUpdateRow
+	* @depends testSelectRow
 	*/
 	
 	public function testDropTable()
