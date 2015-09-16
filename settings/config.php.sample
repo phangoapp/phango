@@ -15,7 +15,7 @@ Routes::$apps=['welcome', 'lang', 'admin'];
 
 Webmodel::$host_db['default']='localhost';
 	
-Webmodel::$db['default']='example';
+Webmodel::$db['default']='database_name';
 
 Webmodel::$login_db['default']='root';
 
@@ -25,6 +25,6 @@ define('ADMIN_FOLDER', 'admin');
 
 # Define an email
 
-define('SENDER_EMAIL', 'cms@web-t-sys.com');
+define('SENDER_EMAIL', 'example@example.com');
 
 ?>
