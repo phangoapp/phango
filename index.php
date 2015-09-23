@@ -6,6 +6,24 @@ use PhangoApp\PhaView\View;
 
 include(__DIR__."/vendor/autoload.php");
 
+if(!defined('COOKIE_SESSION_NAME'))
+{
+
+    define('COOKIE_SESSION_NAME', 'phango');
+
+}
+
+if(isset($_COOKIE[COOKIE_SESSION_NAME]))
+{
+
+    session_id($_COOKIE[COOKIE_SESSION_NAME]);
+
+}
+
+session_name(COOKIE_SESSION_NAME.'_session');
+
+session_set_cookie_params(0, Routes::$root_url);
+
 session_start();
 
 $route=new Routes();
