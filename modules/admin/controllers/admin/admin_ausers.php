@@ -38,7 +38,7 @@ function AusersAdmin()
 			
 			Webmodel::$model['user_admin']->insert_after_field_form('password', 'repeat_password', $repeat_password);
 			
-			$admin=new GenerateAdminClass('user_admin', AdminUtils::set_admin_link('ausers', array('op' => 0)));
+			$admin=new GenerateAdminClass(Webmodel::$model['user_admin'], AdminUtils::set_admin_link('ausers', array('op' => 0)));
 			
 			$admin->list->arr_fields=array('IdUser_admin', 'user_admin', 'privileges_user');
 			$admin->list->set_fields_showed($admin->list->arr_fields);
