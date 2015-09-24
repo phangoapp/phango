@@ -105,7 +105,7 @@ function AusersAdmin()
                 
                 echo '<p>'.$hierarchy->show($action).'<p>';
 				
-				$admin=new GenerateAdminClass('moderators_module', $action);
+				$admin=new GenerateAdminClass(Webmodel::$model['moderators_module'], $action);
 				
 				$admin->arr_fields_edit=array('moderator', 'idmodule');
 				
