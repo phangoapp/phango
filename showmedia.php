@@ -16,8 +16,8 @@ Utils::load_config('config_views');
 foreach(Routes::$apps as $app)
 {
 
-	View::$folder_env[]='modules/'.$app.'/views';
-	View::$media_env[]='modules/'.$app;
+	View::$folder_env[]='vendor/'.$app.'/views';
+	View::$media_env[]='vendor/'.$app;
 	
 }
 

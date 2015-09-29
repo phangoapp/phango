@@ -4,12 +4,12 @@ use PhangoApp\PhaRouter\Routes;
 
 Routes::$root_url='/';
 
-Routes::$app='app';
+Routes::$app='phangoapp/welcome';
 
-Routes::$apps=['app'];
+Routes::$apps=['welcome'];
 
 Routes::$base_path=getcwd();
 
-Routes::$root_path=Routes::$root_path.'/modules';
+Routes::$root_path=Routes::$root_path.'/vendor';
 
 ?>
