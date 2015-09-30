@@ -51,17 +51,17 @@ if(!isset($options['m']) && !isset($options['c']))
 
 	//die("Use: php console.php -m=module -c=console_controller [more arguments for daemon]\n");
 	
-	$climate->white()->backgroundBlack()->out("Use: php console.php -m=module -c=console_controller [more arguments for daemon]");
+	$climate->white()->backgroundBlack()->out("Use: php console.php -m=group/module -c=console_controller [more arguments for daemon]");
 	die;
 }
 
-$module=@Utils::form_text(basename($options['m']));
+$module=@Utils::form_text($options['m']);
 
 $console_controller=@Utils::form_text(basename($options['c']));
 
 //Include console_controller
 
-$controller='./modules/'.$module.'/console/controller_'.$console_controller.'.php';
+$controller='./vendor/'.$module.'/console/controller_'.$console_controller.'.php';
 
 if(file_exists($controller))
 {
