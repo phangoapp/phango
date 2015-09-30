@@ -38,7 +38,19 @@ $arr_composer=array(
 	array(
             "type"=> "vcs",
             "url"=> "https://github.com/phangoapp/phalibs.git"
-        )
+        ),
+        array(
+            "type"=> "vcs",
+            "url"=> "https://github.com/phangoapp/admin.git"
+        ),
+	 array(
+            "type"=> "vcs",
+            "url"=> "https://github.com/phangoapp/welcome.git"
+        ),
+         array(
+            "type"=> "vcs",
+            "url"=> "https://github.com/phangoapp/lang.git"
+        ) 
 	],
 
     "require" => array(
@@ -49,6 +61,9 @@ $arr_composer=array(
 	"phangoapp/phautils"=> "dev-master",
 	"phangoapp/phai18n"=> "dev-master",
 	"phangoapp/phalibs"=> "dev-master",
+	"phangoapp/admin"=> "dev-master",
+	"phangoapp/welcome"=> "dev-master",
+	"phangoapp/lang"=> "dev-master",
 	"ext-gd"=> "*",
 	"ext-libxml"=> "*",
 	"league/climate"=> "dev-master"
