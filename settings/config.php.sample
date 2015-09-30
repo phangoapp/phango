@@ -5,9 +5,9 @@ use PhangoApp\PhaRouter\Routes;
 
 Routes::$root_url='/';
 
-Routes::$app='welcome';
+Routes::$app='phangoapp/welcome';
 
-Routes::$apps=['welcome', 'lang', 'admin'];
+Routes::$apps=['phangoapp/welcome', 'phangoapp/lang', 'phangoapp/admin'];
 
 /**
 * Configure database. You can configure multiple databases for different models.
