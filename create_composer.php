@@ -27,9 +27,9 @@ if(!is_file($file))
 
 include($file);
 
-$root_dir=__DIR__.'/modules/';
+//$root_dir=__DIR__.'/modules/';
 
-$arr_dir=scandir($root_dir);
+$arr_dir=array(); //scandir($root_dir);
 
 //print_r($arr_dir);
 
