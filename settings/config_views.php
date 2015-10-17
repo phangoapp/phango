@@ -13,14 +13,6 @@ View::$url_media=Routes::$root_url.'media';
 
 //View::$root_path=PhangoVar::$base_path;
 
-/**
-* Property for define the theme.
-* 
-*/
-
-View::$folder_env=array('views/default');
-
-View::$theme=basename(View::$folder_env[0]);
 /*
 foreach(Routes::$apps as $app)
 {

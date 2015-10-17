@@ -21,6 +21,19 @@ Webmodel::$login_db['default']='root';
 
 Webmodel::$pass_db['default']='';
 
+/**
+* Property for define the theme.
+* 
+*/
+
+View::$folder_env=array('views/default');
+
+View::$theme=basename(View::$folder_env[0]);
+
+/**
+* Define the admin folder
+*/
+
 define('ADMIN_FOLDER', 'admin');
 
 # Define an email
