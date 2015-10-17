@@ -11,6 +11,10 @@ include(__DIR__.'/vendor/autoload.php');
 Utils::load_config('config');
 Utils::load_config('config_views');
 
+//Set the theme folder media folder_env
+
+View::$media_env=array(View::$folder_env[0]);
+
 //Here don't worry about check ten directories for find view.
 
 foreach(Routes::$apps as $app)
@@ -20,6 +24,8 @@ foreach(Routes::$apps as $app)
 	View::$media_env[]='vendor/'.$app;
 	
 }
+
+
 
 View::load_media_file($_SERVER['REQUEST_URI']);
 
