@@ -19,7 +19,7 @@ if(isset($options['c']))
 if(!is_file($file))
 {
 
-	echo "Don't exists the composer php file\n";
+	echo "Don't exists the composer.php file\n";
 
 	exit(1);
 
@@ -57,6 +57,13 @@ foreach($arr_dir as $dir)
 }
 
 
-echo json_encode($arr_composer, JSON_PRETTY_PRINT)."\n";
+$composer_content=json_encode($arr_composer, JSON_PRETTY_PRINT)."\n";
+
+if(!file_put_contents('composer.json', $composer_content))
+{
+
+    echo "Error: cannot create composer.json. Please, check directory permissions for it...\n";
+
+}
 
 ?>
