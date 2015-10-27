@@ -15,7 +15,6 @@ function AdminListView($admin)
     if($admin->list->yes_search==1)
     {
     
-        
         $admin->list->search_by_url();
         
         $select=new SelectForm('field_search', $_GET['field_search']);
@@ -26,6 +25,13 @@ function AdminListView($admin)
         {
         
             $select->arr_select[$field]=Webmodel::$model[$admin->model_name]->forms[$field]->label;
+        
+        }
+        
+        if($_GET['field_search']=='')
+        {
+        
+            $select->default_value=$admin->list->default_field_search;
         
         }
         
