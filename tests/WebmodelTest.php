@@ -77,6 +77,10 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
         
         $table_test->set_conditions(['WHERE name=? and lastname=?', ['Name', 'LastName']]);
         
+        $table_test->set_order(['name' => ORDER_DESC]);
+        
+        $table_test->set_limit([1]);
+        
         $query=$table_test->select();
         
         $this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name', 'lastname' => 'LastName'), $table_test->fetch_array($query));

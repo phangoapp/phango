@@ -28,6 +28,8 @@ session_start();
 
 $route=new Routes();
 
+$route->arr_finish_callbacks=array('PhangoApp\PhaModels\Webmodel::save_cache_query' => []);
+
 Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');
