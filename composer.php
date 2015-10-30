@@ -50,7 +50,11 @@ $arr_composer=array(
          array(
             "type"=> "vcs",
             "url"=> "https://github.com/phangoapp/lang.git"
-        ) 
+        ),
+	array(
+            "type"=> "vcs",
+            "url"=> "https://github.com/phangoapp/phatime.git"
+        )
 	],
 
     "require" => array(
@@ -64,6 +68,7 @@ $arr_composer=array(
 	"phangoapp/admin"=> "dev-master",
 	"phangoapp/welcome"=> "dev-master",
 	"phangoapp/lang"=> "dev-master",
+	"phangoapp/phatime"=>"dev-master",
 	"ext-gd"=> "*",
 	"ext-libxml"=> "*",
 	"league/climate"=> "dev-master"
