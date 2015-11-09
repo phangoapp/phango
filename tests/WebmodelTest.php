@@ -100,6 +100,21 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	}
 	
 	/**
+    * @depends testCreateTable
+    * @depends testInsertRow
+    */
+    
+    public function testSetConditionsRow()
+    {
+        global $table_test;
+        
+        $table_test->set_conditions(['WHERE name=? and lastname=?', ['Name"', 'LastName"']]);
+        
+        $this->assertEquals('WHERE name="Name\""  and lastname="LastName\""', $table_test->conditions);
+    
+    }
+	
+	/**
 	* @depends testCreateTable
 	* @depends testInsertRow
 	* @depends testUpdateRow
