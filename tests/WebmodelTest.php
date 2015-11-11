@@ -116,9 +116,6 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	
 	/**
 	* @depends testCreateTable
-	* @depends testInsertRow
-	* @depends testUpdateRow
-	* @depends testSelectRow
 	*/
 	
 	public function testDropTable()
