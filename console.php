@@ -81,7 +81,7 @@ if(file_exists($controller))
 	else
 	{
 		$climate->white()->backgroundRed()->out("Error: Don't exists the function with name ".$function_console." in ".$controller."...");
-		die();
+		exit(1);
 	
 	}
 
@@ -90,7 +90,7 @@ else
 {
 
 	$climate->white()->backgroundRed()->out("Error: Don't exists the controller ".$controller." for console statement...");
-	die();
+	exit(1);
 
 }
 
