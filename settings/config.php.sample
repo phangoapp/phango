@@ -2,6 +2,7 @@
 
 use PhangoApp\PhaModels\Webmodel;
 use PhangoApp\PhaRouter\Routes;
+use PhangoApp\PhaView\View;
 
 Routes::$root_url='/';
 

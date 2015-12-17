@@ -1,0 +1,9 @@
+<?php
+
+ModuleAdmin::$arr_modules_admin=array('ausers' => array('phangoapp/admin', 'ausers'));
+
+# Multiple admin example
+
+# 'example' => ['example1' => array('example/example', 'example1'), 'example2' => array('example/example', 'example2')]
+
+?>
