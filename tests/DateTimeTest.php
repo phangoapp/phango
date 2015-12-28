@@ -54,6 +54,31 @@ class DateTimeTest extends PHPUnit_Framework_TestCase
     
     }
     
+    public function testLocaltoGMT()
+    {
+    
+        date_default_timezone_set('Europe/Madrid');
+        $this->assertEquals('20121209232032', PhaTime\DateTime::local_to_gmt('20121210002032'));
+    
+    }
+    
+    public function testObtainFormatDate()
+    {
+    
+        date_default_timezone_set('UTC');
+    
+        $arr_time=PhaTime\DateTime::format_timedata('20121210102032PM');
+        
+        $this->assertEquals('22', $arr_time[3]);
+        
+        $arr_time=PhaTime\DateTime::format_timedata('20121210102032AM');
+        
+        $this->assertEquals('10', $arr_time[3]);
+    
+        //$this->assertEquals('2012/12/10', PhaTime\DateTime::format_date('20121210232032'));
+    
+    }
+    
 }
 
 ?>
