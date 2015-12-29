@@ -13,6 +13,8 @@ $table_test=new Webmodel('table_test');
 $table_test->register('name', new CharField(255));
 $table_test->register('lastname', new CharField(255));
 
+$table_test->fields_to_update=['name', 'lastname'];
+
 class WebmodelTest extends PHPUnit_Framework_TestCase
 {
 
