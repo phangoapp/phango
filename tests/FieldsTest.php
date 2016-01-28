@@ -67,13 +67,13 @@ class FieldsTest extends PHPUnit_Framework_TestCase
     
     public function testDateField()
     {
-        /*
+        
         $field=new CoreFields\DateField();
         
-        $date=0;
+        $date='20160124122510';
         
-        echo $field->check($date);
-        */
+        $this->assertEquals('20160124112510', $field->check($date) );
+        
     }
 }
 
