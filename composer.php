@@ -71,7 +71,7 @@ $arr_composer=array(
 	"phangoapp/phatime"=>"dev-master",
 	"ext-gd"=> "*",
 	"ext-libxml"=> "*",
-	"league/climate"=> "dev-master"
+	"league/climate"=> "@stable"
 	
     )
 

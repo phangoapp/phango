@@ -39,6 +39,25 @@ class FieldsTest extends PHPUnit_Framework_TestCase
     
     }
     
+    public function testDoubleField()
+    {
+        
+        $field=new CoreFields\DoubleField();
+        
+        $double=-3.7536687;
+
+        $this->assertEquals(-3.7536687, $field->check($double) );
+        
+        $this->assertEquals(0, $field->check('"word"') );
+        
+    }
+    
+    public function testPhoneField()
+    {
+        
+        
+    }
+    
     public function testChoiceField()
     {
     
@@ -48,9 +67,13 @@ class FieldsTest extends PHPUnit_Framework_TestCase
     
     public function testDateField()
     {
-    
+        /*
+        $field=new CoreFields\DateField();
         
-    
+        $date=0;
+        
+        echo $field->check($date);
+        */
     }
 }
 

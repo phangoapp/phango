@@ -1,9 +1,9 @@
 <?php
 
-ModuleAdmin::$arr_modules_admin=array('ausers' => array('phangoapp/admin', 'ausers', I18n::lang('admin', 'ausers', 'Users admin')));
+ModuleAdmin::$arr_modules_admin[]=array('ausers', 'phangoapp/admin', PhangoApp\PhaI18n\I18n::lang('admin', 'ausers', 'Users admin'));
 
 # Multiple admin example
 
-# 'example' => ['example1' => array('example/example', 'example1', 'Example1', ), 'example2' => array('example/example', 'example2', 'Example2'), 'title' => 'Examples']
+#ModuleAdmin::$arr_modules_admin[]=[ 'alerts', [array('photicket/regions', 'photicket/alerts/regions', PhangoApp\PhaI18n\I18n::lang('photicket', 'regions', 'Regiones') ), array('photicket/alerts_types', 'photicket/alerts/types', 'Tipos de alertas')], PhangoApp\PhaI18n\I18n::lang('photicket', 'config', 'Configuración de alertas')];
 
 ?>
