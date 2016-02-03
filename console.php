@@ -75,7 +75,58 @@ if(file_exists($controller))
 	if( function_exists($function_console) )
 	{
 	
-		$function_console();
+		/*
+         * $longopts  = array(
+            "required:",     // Valor obligatorio
+            "optional::",    // Valor opcional
+            "option",        // Sin valores
+            "opt",           // Sin valores
+        );*/
+        
+        $info_function=new ReflectionFunction($function_console);
+        
+        $arr_opts=array();
+        
+        $arr_params=array();
+        
+        foreach( $info_function->getParameters() as $param )
+        {
+            
+            $name=$param->getName();
+            
+            if($param->isOptional())
+            {
+                
+                $arr_opts[]=$name.'::';
+                
+                $arr_params[]='--'.$name.'=[optional]';
+                
+            }
+            else
+            {
+                
+                $arr_opts[]=$name.':';
+                $arr_params[]='--'.$name.'=[required]';
+                
+            }
+            
+            
+            
+        }
+        
+        $final_params=getopt('', $arr_opts);
+        
+        $required_parameters=count($final_params);
+        
+        if($info_function->getNumberOfRequiredParameters()>$required_parameters)
+        {
+            
+            $climate->white()->backgroundBlack()->out("Use: php console.php -m=group/module -c=console_controller ".implode(' ', $arr_params));
+            die;
+            
+        }
+        
+        call_user_func_array($function_console, $final_params);
 	
 	}
 	else
