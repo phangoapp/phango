@@ -13,6 +13,8 @@ use PhangoApp\PhaI18n\I18n;
 
 Utils::load_config('config_i18n');
 Utils::load_config('config');
+Utils::load_config('config_views');
+
 
 /*
 include('libraries/fields/corefields.php');
@@ -62,6 +64,8 @@ $console_controller=@Utils::form_text(basename($options['c']));
 //Include console_controller
 
 $controller='./vendor/'.$module.'/console/controller_'.$console_controller.'.php';
+
+\PhangoApp\PhaView\View::$folder_env[]='vendor/'.$module.'/views';
 
 if(file_exists($controller))
 {
