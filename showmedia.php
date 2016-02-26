@@ -21,6 +21,7 @@ foreach(Routes::$apps as $app)
 {
 
 	View::$folder_env[]='vendor/'.$app.'/views';
+	View::$media_env[]=View::$folder_env[0].'/'.$app;
 	View::$media_env[]='vendor/'.$app;
 	
 }
