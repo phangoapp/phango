@@ -34,6 +34,8 @@ Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');
 
+settype($_GET['begin_page'], 'integer');
+
 $route->response($_SERVER['REQUEST_URI']);
 
 ?>

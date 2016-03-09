@@ -9,7 +9,7 @@ View::$php_file=Routes::$root_url.'showmedia.php';
 * Property that define the static when you will go to production.
 */
 
-View::$url_media=Routes::$root_url.'media';
+View::$url_media=Routes::$root_url;
 
 //View::$root_path=PhangoVar::$base_path;
 
@@ -22,11 +22,5 @@ foreach(Routes::$apps as $app)
 	
 }
 */
-/**
-* With this method set the media files to production if the argument is true. By default is false.
-* @warning Never forget set this method when you are going to production
-*/
-
-View::set_production(false);
 
 ?>

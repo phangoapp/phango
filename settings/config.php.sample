@@ -32,6 +32,13 @@ View::$folder_env=array('views/default');
 View::$theme=basename(View::$folder_env[0]);
 
 /**
+* With this method set the media files to production if the argument is true. By default is false.
+* @warning Never forget set this method when you are going to production
+*/
+
+View::set_production(false);
+
+/**
 * Define the admin folder
 */
 
