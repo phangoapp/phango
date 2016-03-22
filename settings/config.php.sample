@@ -32,6 +32,13 @@ View::$folder_env=array('views/default');
 View::$theme=basename(View::$folder_env[0]);
 
 /**
+* Property for set true the debug of views. If setted, the view is reloaded if have changes. Please, set to false in production.
+* 
+*/
+
+View::$debug_tpl=true;
+
+/**
 * With this method set the media files to production if the argument is true. By default is false.
 * @warning Never forget set this method when you are going to production
 */
