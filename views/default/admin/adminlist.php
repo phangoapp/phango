@@ -10,7 +10,7 @@ use PhangoApp\PhaView\View;
 
 function AdminListView($admin)
 {
-    echo View::show_flash(); 
+    echo View::show_flash();
     
     if($admin->list->yes_search==1)
     {
