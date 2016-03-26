@@ -20,7 +20,7 @@ class AdminUtilsTest extends PHPUnit_Framework_TestCase
         
         //Routes::$root_url.'index.php/admin/index/home/module/get/op/1', AdminUtils::set_admin_link('module', array('op' => 1))
         
-        $this->assertEquals(Routes::$root_url.'index.php/admin/index/home/module/get/op/1', AdminUtils::set_admin_link('module', array('op' => 1)) );
+        $this->assertEquals(Routes::$root_url.Routes::$base_file.'/admin/module/get/op/1', AdminUtils::set_admin_link('module', array('op' => 1)) );
         
     }
 

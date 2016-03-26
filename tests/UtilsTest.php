@@ -7,7 +7,7 @@ include("../vendor/autoload.php");
 
 Utils::load_config('config', '../settings');
 
-class UtilsTest extends PHPUnit_Framework_TestCase
+class UtilsModTest extends PHPUnit_Framework_TestCase
 {
 	public function testSlugify()
 	{

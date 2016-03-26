@@ -5,9 +5,11 @@ use PhangoApp\PhaI18n\I18n;
 
 include("../vendor/autoload.php");
 
-$base_path='./tmp/i18n';
+include('../settings/config_i18n.php');
+
+$base_path='./tmp/';
         
-$lang_path=$base_path.'/common/i18n/en-US';
+$lang_path=$base_path.'/i18n/en-US';
 
 if(!is_dir($lang_path))
 {
@@ -16,16 +18,17 @@ if(!is_dir($lang_path))
 
 }
 
-I18n::$base_path=$base_path;
-
-I18n::$arr_i18n=['en-US'];
-
-I18n::$language='en-US';
-
 class I18nTest extends PHPUnit_Framework_TestCase
 {
 	public function testLoadLang()
 	{
+        global $base_path;
+        
+        I18n::$base_path=$base_path;
+
+        I18n::$arr_i18n=['en-US'];
+
+        I18n::$language='en-US';
 	
         global $lang_path;
 		
@@ -34,7 +37,6 @@ class I18nTest extends PHPUnit_Framework_TestCase
 		$file_lang="<?php\n\nuse PhangoApp\PhaI18n\I18n;\n\nI18n::\$lang['common']['simple_text']='This is a simple text';\n\n";
 		
 		file_put_contents($lang_path.'/common.php', $file_lang);
-		
 		//
 		$this->assertTrue(I18n::load_lang('common'));
 
@@ -44,10 +46,17 @@ class I18nTest extends PHPUnit_Framework_TestCase
     * @depends testLoadLang
     */
 	
-	public function testLoadLang2()
+	public function testLoadLError()
 	{
 	
         //Clean cache loaded
+        global $base_path;
+        
+        I18n::$base_path=$base_path;
+
+        I18n::$arr_i18n=['en-US'];
+
+        I18n::$language='en-US';
         
         I18n::$cache_lang=array();
 	
@@ -61,11 +70,20 @@ class I18nTest extends PHPUnit_Framework_TestCase
     
     public function testValueLang()
     {
+        global $base_path;
+        
+        I18n::$base_path=$base_path;
+
+        I18n::$arr_i18n=['en-US'];
+
+        I18n::$language='en-US';
     
         $this->assertEquals('This is a simple text', I18n::$lang['common']['simple_text']);
     
     }
 
 }
+
+
 
 ?>

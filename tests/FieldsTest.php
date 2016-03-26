@@ -65,6 +65,7 @@ class FieldsTest extends PHPUnit_Framework_TestCase
     
     }
     
+    /*
     public function testDateField()
     {
         
@@ -73,6 +74,27 @@ class FieldsTest extends PHPUnit_Framework_TestCase
         $date='20160124122510';
         
         $this->assertEquals('20160124112510', $field->check($date) );
+        
+    }*/
+    
+    public function testPasswordField()
+    {
+        
+        
+        $field=new CoreFields\PasswordField();
+        
+        $password="a\x00TestNullPassword";
+        
+        $hash_password=$field->check($password);
+        
+        $this->assertEquals('', CoreFields\PasswordField::check_password("a\x00", $hash_password));
+        
+        $simple_password="Pass phrase cool#123";
+        
+        $hash_password=$field->check($simple_password);
+        
+        $this->assertTrue(CoreFields\PasswordField::check_password($simple_password, $hash_password));
+        
         
     }
 }
