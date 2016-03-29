@@ -59,7 +59,7 @@ function AdminListView($admin)
     {
     
     ?>
-        <p><a href="<?php echo Routes::add_get_parameters($admin->url, array('op_admin' => 1)); ?>"><?php echo I18n::lang('common', 'add_new_item', 'Add new item'); ?></a></p>
+        <p><a href="<?php echo Routes::add_get_parameters($admin->url, array('op_admin' => 1)); ?>"><?php echo $admin->text_add_item; ?></a></p>
     <?php
     
     }
