@@ -5,6 +5,8 @@
 *
 */
 
+chdir(__DIR__);
+
 $file='composer.php';
 
 $options=getopt('c:');
