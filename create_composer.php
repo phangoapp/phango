@@ -59,7 +59,7 @@ foreach($arr_dir as $dir)
 
 $composer_content=json_encode($arr_composer, JSON_PRETTY_PRINT)."\n";
 
-if(!file_put_contents('composer.json', $composer_content))
+if(!file_put_contents(__DIR__.'/composer.json', $composer_content))
 {
 
     echo "Error: cannot create composer.json. Please, check directory permissions for it...\n";
