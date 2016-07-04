@@ -1,6 +1,6 @@
 <?php
 
-ModuleAdmin::$arr_modules_admin[]=array('ausers', 'phangoapp/admin', PhangoApp\PhaI18n\I18n::lang('admin', 'ausers', 'Users admin'));
+ModuleAdmin::$arr_modules_admin[]=array('ausers', 'vendor/phangoapp/admin/controllers/admin/admin_ausers', PhangoApp\PhaI18n\I18n::lang('admin', 'ausers', 'Users admin'));
 
 # Multiple admin example
 

@@ -3,6 +3,7 @@
 use PhangoApp\PhaModels\Webmodel;
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaModels\CoreFields\CharField;
+use PhangoApp\PhaModels\CoreFields\IntegerField;
 
 include("../vendor/autoload.php");
 
@@ -12,8 +13,9 @@ $table_test=new Webmodel('table_test');
 		
 $table_test->register('name', new CharField(255));
 $table_test->register('lastname', new CharField(255));
+$table_test->register('type', new IntegerField());
 
-$table_test->fields_to_update=['name', 'lastname'];
+$table_test->fields_to_update=['name', 'lastname', 'type'];
 
 class WebmodelTest extends PHPUnit_Framework_TestCase
 {
@@ -34,7 +36,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	{
 		global $table_test;
 		
-		$this->assertEquals(1, $table_test->insert(array('name' => 'Name', 'lastname' => 'LastName')));
+		$this->assertEquals(1, $table_test->insert(array('name' => 'Name', 'lastname' => 'LastName', 'type' => 1)));
 		
 	
 	}
@@ -48,7 +50,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 	{
 		global $table_test;
 		
-		$this->assertEquals(1, $table_test->update(array('name' => 'Name', 'lastname' => 'LastName')));
+		$this->assertEquals(1, $table_test->update(array('name' => 'Name', 'lastname' => 'LastName', 'type' => 1)));
 		
 	
 	}
@@ -64,7 +66,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
 		
 		$query=$table_test->select();
 		
-		$this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name', 'lastname' => 'LastName'), $table_test->fetch_array($query));
+		$this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name', 'lastname' => 'LastName', 'type' => 1), $table_test->fetch_array($query));
 	
 	}
 	
@@ -77,7 +79,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
     {
         global $table_test;
         
-        $table_test->set_conditions(['WHERE name=? and lastname=?', ['Name', 'LastName']]);
+        $table_test->set_conditions(['WHERE name=? and lastname=? and type=?', ['Name', 'LastName', 1]]);
         
         $table_test->set_order(['name' => ORDER_DESC]);
         
@@ -85,7 +87,7 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
         
         $query=$table_test->select();
         
-        $this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name', 'lastname' => 'LastName'), $table_test->fetch_array($query));
+        $this->assertEquals(array('IdTable_test' => 1, 'name' => 'Name', 'lastname' => 'LastName', 'type' => 1), $table_test->fetch_array($query));
     
     }
 	/**
@@ -110,9 +112,9 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
     {
         global $table_test;
         
-        $table_test->set_conditions(['WHERE name=? and lastname=?', ['Name"', 'LastName"']]);
+        $table_test->set_conditions(['WHERE name=? and lastname=? and type=?', ['Name"', 'LastName"', 1]]);
         
-        $this->assertEquals('WHERE name="Name\""  and lastname="LastName\""', $table_test->conditions);
+        $this->assertEquals('WHERE name="Name\"" and lastname="LastName\"" and type=1', $table_test->conditions);
     
     }
 	
