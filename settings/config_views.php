@@ -3,7 +3,7 @@
 use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaView\View;
 
-View::$php_file=Routes::$root_url.'showmedia.php';
+View::$php_file=Routes::$root_url.Routes::$base_file.'/showmedia';
 
 /**
 * Property that define the static when you will go to production.
