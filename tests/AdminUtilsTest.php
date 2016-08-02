@@ -4,14 +4,14 @@ use PhangoApp\PhaLibs\AdminUtils;
 use PhangoApp\PhaRouter\Routes;
 
 include("../vendor/autoload.php");
-/*
+
 if(!defined('ADMIN_FOLDER'))
 {
 
     define('ADMIN_FOLDER', 'admin');
 
 }
-  */  
+  
     
 class AdminUtilsTest extends PHPUnit_Framework_TestCase
 {

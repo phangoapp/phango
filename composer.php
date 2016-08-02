@@ -4,7 +4,7 @@ $arr_composer=array(
 
     "name" => "phangoapp/framework",
     "description" => "A framework for create nice apps",
-    
+    "php" => "^5.4|| ^7.0",
      "license" => "GPL",
     "authors"=> [
         array(
