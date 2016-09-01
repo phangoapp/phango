@@ -13,7 +13,7 @@ $arr_composer=array(
         )
     ],
     
-    "minimum-stability" => "dev",
+    "minimum-stability" => "stable",
 
     "repositories" => [array(
             "type"=> "vcs",
