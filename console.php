@@ -11,6 +11,7 @@ use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaView\View;
 use PhangoApp\PhaI18n\I18n;
 
+Utils::load_config('config_routes');
 Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');

@@ -112,9 +112,9 @@ class WebmodelTest extends PHPUnit_Framework_TestCase
     {
         global $table_test;
         
-        $table_test->set_conditions(['WHERE name=? and lastname=? and type=?', ['Name"', 'LastName"', 1]]);
+        $table_test->set_conditions(['WHERE name=? and lastname=? and type=? and lastname IN ?', ['Name"', 'LastName"', 1, [25, 'Pepito"']]]);
         
-        $this->assertEquals('WHERE name="Name\"" and lastname="LastName\"" and type=1', $table_test->conditions);
+        $this->assertEquals('WHERE name="Name\"" and lastname="LastName\"" and type=1 and lastname IN (25, "Pepito\"")', $table_test->conditions);
     
     }
 	
