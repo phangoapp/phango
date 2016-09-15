@@ -2,6 +2,18 @@
 
 use PhangoApp\PhaI18n\I18n;
 
+I18n::$lang['common']['submit']='Submit';
+
+I18n::$lang['common']['asc']='Ascendent';
+
+I18n::$lang['common']['desc']='Descendent';
+
+I18n::$lang['common']['search']='Search';
+
+I18n::$lang['common']['reset']='Reset';
+
+I18n::$lang['common']['pages']='Pages';
+
 I18n::$lang['common']['login']='Login';
 
 I18n::$lang['common']['send']='Send';
@@ -12,11 +24,7 @@ I18n::$lang['common']['order_by']='Order by';
 
 I18n::$lang['common']['in_order']='By order';
 
-I18n::$lang['common']['search']='Search';
-
 I18n::$lang['common']['search_by']='Search by';
-
-I18n::$lang['common']['reset']='Reset';
 
 I18n::$lang['common']['order_and_search']='Order and search';
 
@@ -41,8 +49,6 @@ I18n::$lang['common']['go_back']='Go back';
 I18n::$lang['common']['email']='Email';
 
 I18n::$lang['common']['options']='Options';
-
-I18n::$lang['common']['pages']='Pages';
 
 I18n::$lang['common']['delete_model']='Delete element';
 
@@ -101,11 +107,5 @@ I18n::$lang['common']['redirect']='Redirect';
 I18n::$lang['common']['success']='Success';
 
 I18n::$lang['common']['press_here_redirecting']='Press here for redirecting';
-
-I18n::$lang['common']['asc']='Ascendent';
-
-I18n::$lang['common']['desc']='Descendent';
-
-I18n::$lang['common']['submit']='Submit';
 
 ?>
