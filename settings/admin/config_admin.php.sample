@@ -1,9 +1,15 @@
 <?php
 
+use PhangoApp\PhaRouter\Routes;
+use PhangoApp\PhaUtils\Utils;
+
 ModuleAdmin::$arr_modules_admin[]=array('ausers', 'vendor/phangoapp/admin/controllers/admin/admin_ausers', PhangoApp\PhaI18n\I18n::lang('admin', 'ausers', 'Users admin'));
 
-# Multiple admin example
-
-#ModuleAdmin::$arr_modules_admin[]=[ 'alerts', [array('photicket/regions', 'photicket/alerts/regions', PhangoApp\PhaI18n\I18n::lang('photicket', 'regions', 'Regiones') ), array('photicket/alerts_types', 'photicket/alerts/types', 'Tipos de alertas')], PhangoApp\PhaI18n\I18n::lang('photicket', 'config', 'Configuración de alertas')];
+foreach(Routes::$apps as $admin_module)
+{
+    
+    Utils::load_config('admin/config_admin', $path='vendor/'.$admin_module."/settings");
+    
+}
 
 ?>
