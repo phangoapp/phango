@@ -2,21 +2,9 @@
 
 use PhangoApp\PhaI18n\I18n;
 
-I18n::$lang['users']['username']='Username';
+I18n::$lang['users']['pasword_not_equal_repeat_password']='Passwords are not equal';
 
-I18n::$lang['users']['privileges_user']='Privileges';
-
-I18n::$lang['users']['repeat_password']='Repeat password';
-
-I18n::$lang['users']['login']='Login';
-
-I18n::$lang['users']['automatic_login']='Automatic login';
-
-I18n::$lang['users']['remember_password']='Remember password';
-
-I18n::$lang['users']['register']='Register in the web';
-
-I18n::$lang['users']['remember_password_explain']='Please enter the email address you registered on the website, which is where you receive your new password';
+I18n::$lang['users']['cannot_insert_user_email_or_user']='A user already exists with this email or username';
 
 I18n::$lang['users']['user_error_nick_or_pass']='Wrong user or password';
 
@@ -38,7 +26,7 @@ I18n::$lang['users']['success_change_password']='The password was changed succes
 
 I18n::$lang['users']['hello_lost_pass_successful']='Hello, we have changed your password and is shown below. With these data should be back online in the system.';
 
-I18n::$lang['users']['user_data']='User\\';
+I18n::$lang['users']['user_data']='User\'s data';
 
 I18n::$lang['users']['user']='User';
 
@@ -52,10 +40,23 @@ I18n::$lang['users']['error_token_pass']='Error: incorrect code used to change a
 
 I18n::$lang['users']['user_or_email_exists']='User or email exists';
 
+I18n::$lang['users']['repeat_password']='Repeat password';
+
 I18n::$lang['users']['accept_cond_register']='Accept registration conditions';
 
-I18n::$lang['users']['pasword_not_equal_repeat_password']='Passwords are not equal';
+I18n::$lang['users']['users_admin']='User\'s admin';
 
-I18n::$lang['users']['cannot_insert_user_email_or_user']='A user already exists with this email or username';
+I18n::$lang['users']['username']='Username';
 
-?>
+I18n::$lang['users']['privileges_user']='Privileges';
+
+I18n::$lang['users']['register']='Register in the web';
+
+I18n::$lang['users']['automatic_login']='Automatic login';
+
+I18n::$lang['users']['remember_password']='Remember password';
+
+I18n::$lang['users']['remember_password_explain']='Please enter the email address you registered on the website, which is where you receive your new password';
+
+I18n::$lang['users']['login']='Login';
+
