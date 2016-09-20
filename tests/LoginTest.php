@@ -61,19 +61,21 @@ class LoginTest extends PHPUnit_Framework_TestCase
     
     //Cannot test login because cookies are sended previusly and give output error
     
-    /*
+    
     
     public function testLoginUser()
     {
+        /*
         global $user_test, $login_class;
         
         $this->assertTrue($login_class->login('new_user', 'new_password'));
         
         $this->assertFalse($login_class->login('new_user_blah', 'new_password_blah'));
+	*/
         
     }
     
-    */
+    
     
     /**
     * @depends testCreateTableUser
@@ -90,4 +92,3 @@ class LoginTest extends PHPUnit_Framework_TestCase
 
 }
 
-?>

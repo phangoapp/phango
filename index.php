@@ -20,12 +20,6 @@ if(isset($_COOKIE[COOKIE_SESSION_NAME]))
 
 }
 
-session_name(COOKIE_SESSION_NAME.'_session');
-
-session_set_cookie_params(0, Routes::$root_url);
-
-session_start();
-
 $route=new Routes();
 
 $route->arr_finish_callbacks=array('PhangoApp\PhaModels\Webmodel::save_cache_query' => []);
@@ -33,6 +27,12 @@ $route->arr_finish_callbacks=array('PhangoApp\PhaModels\Webmodel::save_cache_que
 Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');
+
+session_name(COOKIE_SESSION_NAME.'_session');
+
+session_set_cookie_params(0, Routes::$root_url);
+
+session_start();
 
 $route->response($_SERVER['REQUEST_URI']);
 
