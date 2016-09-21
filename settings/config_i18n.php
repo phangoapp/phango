@@ -12,6 +12,4 @@ I18n::$arr_i18n=array('es-ES', 'en-US');
 
 I18n::$language='en-US';
 
-I18n::load_lang('common');
-
 ?>

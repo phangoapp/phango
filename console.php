@@ -16,6 +16,14 @@ Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');
 
+/**Load configurations from modules**/
+
+foreach(Routes::$apps as $admin_module)
+{
+    
+    Utils::load_config('config', $path='vendor/'.$admin_module."/settings");
+    
+}
 
 /*
 include('libraries/fields/corefields.php');
@@ -24,7 +32,9 @@ include('libraries/forms/coreforms.php');
 
 I18n::load_lang('common');
 
-Routes::$base_path=getcwd();
+Routes::$base_path=__DIR__;
+
+chdir(Routes::$base_path);
 
 //Load extra libraries
 
@@ -64,7 +74,7 @@ $console_controller=@Utils::form_text(basename($options['c']));
 
 //Include console_controller
 
-$controller='./vendor/'.$module.'/console/controller_'.$console_controller.'.php';
+$controller=__DIR__.'/vendor/'.$module.'/console/controller_'.$console_controller.'.php';
 
 \PhangoApp\PhaView\View::$folder_env[]='vendor/'.$module.'/views';
 

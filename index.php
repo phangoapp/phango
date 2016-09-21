@@ -3,6 +3,7 @@
 use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaView\View;
+use PhangoApp\PhaI18n\I18n;
 
 include(__DIR__."/vendor/autoload.php");
 
@@ -33,6 +34,17 @@ session_name(COOKIE_SESSION_NAME.'_session');
 session_set_cookie_params(0, Routes::$root_url);
 
 session_start();
+
+I18n::load_lang('common');
+
+/**Load configurations from modules**/
+
+foreach(Routes::$apps as $admin_module)
+{
+    
+    Utils::load_config('config', $path='vendor/'.$admin_module."/settings");
+    
+}
 
 $route->response($_SERVER['REQUEST_URI']);
 
