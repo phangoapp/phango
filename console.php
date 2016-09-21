@@ -4,12 +4,16 @@
 
 ini_set('html_errors', 0);
 
-include(__DIR__."/vendor/autoload.php");
+require(__DIR__."/vendor/autoload.php");
 
 use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaView\View;
 use PhangoApp\PhaI18n\I18n;
+
+Routes::$base_path=__DIR__;
+
+chdir(Routes::$base_path);
 
 Utils::load_config('config_routes');
 Utils::load_config('config_i18n');
@@ -31,10 +35,6 @@ include('libraries/forms/coreforms.php');
 */
 
 I18n::load_lang('common');
-
-Routes::$base_path=__DIR__;
-
-chdir(Routes::$base_path);
 
 //Load extra libraries
 
