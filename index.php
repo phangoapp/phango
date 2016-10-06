@@ -46,6 +46,8 @@ foreach(Routes::$apps as $admin_module)
     
 }
 
+date_default_timezone_set(PhangoApp\PhaTime\DateTime::$timezone);
+
 $route->response($_SERVER['REQUEST_URI']);
 
 ?>
