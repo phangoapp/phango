@@ -3,8 +3,6 @@
 use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaUtils\Utils;
 
-ModuleAdmin::$arr_modules_admin[]=array('ausers', 'vendor/phangoapp/admin/controllers/admin/admin_ausers', PhangoApp\PhaI18n\I18n::lang('admin', 'ausers', 'Users admin'));
-
 foreach(Routes::$apps as $admin_module)
 {
     
