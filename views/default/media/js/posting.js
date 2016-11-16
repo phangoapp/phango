@@ -66,6 +66,8 @@
                    
                 alert(JSON.stringify(data));
                 
+                $(update_waiting_id).hide();
+                
                 $(form_id).fadeTo(1, 1);
                 
             });
