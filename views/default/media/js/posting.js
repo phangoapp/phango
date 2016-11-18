@@ -1,9 +1,16 @@
 (function( $ ){
 	
-	$.fn.sendPost = function (url, update_id, update_waiting_id, error_text_id) 
+	$.fn.sendPost = function (url, update_id, update_waiting_id, error_text_id, pre_callback) 
 	{
     
         $(this).submit( function () {
+            
+            if(pre_callback)
+            {
+                
+                pre_callback();
+                
+            }
             
             $(this).fadeTo(1, 0.25);
             
