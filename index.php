@@ -14,13 +14,6 @@ if(!defined('COOKIE_SESSION_NAME'))
 
 }
 
-if(isset($_COOKIE[COOKIE_SESSION_NAME]))
-{
-
-    session_id($_COOKIE[COOKIE_SESSION_NAME]);
-
-}
-
 $route=new Routes();
 
 $route->arr_finish_callbacks=array('PhangoApp\PhaModels\Webmodel::save_cache_query' => []);

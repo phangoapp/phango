@@ -1,6 +1,6 @@
 (function( $ ){
 	
-	$.fn.sendPost = function (url, update_id, update_waiting_id, error_text_id, pre_callback) 
+	$.fn.sendPost = function (url, update_id, update_waiting_id, error_text_id, pre_callback, success_callback) 
 	{
     
         $(this).submit( function () {
@@ -21,9 +21,9 @@
             $(update_waiting_id).show();
             $(error_text_id).hide();
             
-            data=$(this).serializeArray();
+            data=new FormData($(this)[0]); //$(this).serializeArray();
             
-            var posting = $.post( url, data , function(data) {
+            var posting = $.post({url: url, data: data , success: function(data) {
                 
                 $(update_waiting_id).hide();
                 
@@ -52,6 +52,13 @@
                 else
                 {
                     
+                    if(success_callback)
+                    {
+                        
+                        success_callback(data);
+                        
+                    }
+                    
                     $(update_id).show(function () {
                         
                         setTimeout(function () {
@@ -66,7 +73,7 @@
                     
                 }
                 
-            }, 'json');
+            }, dataType: 'json', cache: false, contentType: false, processData: false});
      
             
             posting.fail( function(data) {
