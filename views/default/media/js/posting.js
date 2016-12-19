@@ -21,70 +21,147 @@
             $(update_waiting_id).show();
             $(error_text_id).hide();
             
-            data=new FormData($(this)[0]); //$(this).serializeArray();
+            if($(this).attr('enctype'))
+            {
             
-            var posting = $.post({url: url, data: data , success: function(data) {
+                data=new FormData($(this)[0]); //$(this).serializeArray();
                 
-                $(update_waiting_id).hide();
+                var posting = $.post({url: url, data: data , success: function(data) {
                 
-                if(data.error==1)
-                {
-                    $(error_text_id).show(function () {
-                        
-                        setTimeout(function () {
-                            
-                            $(error_text_id).fadeOut(2000);
-                            
-                        }, 3000);
-                        
-                    });
+                    $(update_waiting_id).hide();
                     
-                    $(form_id).fadeTo(1, 1);
-                
-                    for(form in data.form)
+                    if(data.error==1)
                     {
+                        $(error_text_id).show(function () {
+                            
+                            setTimeout(function () {
+                                
+                                $(error_text_id).fadeOut(2000);
+                                
+                            }, 3000);
+                            
+                        });
                         
-                        $('#'+form+'_field_form').parent('p').children('.error').html(data.form[form]);
+                        $(form_id).fadeTo(1, 1);
+                    
+                        for(form in data.form)
+                        {
+                            
+                            $('#'+form+'_field_form').parent('p').children('.error').html(data.form[form]);
+                            
+                        }
                         
                     }
-                    
-                }
-                else
-                {
-                    
-                    if(success_callback)
+                    else
                     {
                         
-                        success_callback(data);
+                        if(success_callback)
+                        {
+                            
+                            success_callback(data);
+                            
+                        }
+                        
+                        $(update_id).show(function () {
+                            
+                            setTimeout(function () {
+                                
+                                $(update_id).fadeOut(2000);
+                                
+                            }, 3000);
+                            
+                        });
+                        
+                        $(form_id).fadeTo(1, 1);
                         
                     }
-                    
-                    $(update_id).show(function () {
-                        
-                        setTimeout(function () {
-                            
-                            $(update_id).fadeOut(2000);
-                            
-                        }, 3000);
-                        
-                    });
-                    
-                    $(form_id).fadeTo(1, 1);
-                    
-                }
                 
-            }, dataType: 'json', cache: false, contentType: false, processData: false});
+                }, dataType: 'json', cache: false, contentType: false, processData: false});
      
             
-            posting.fail( function(data) {
-                   
-                alert(JSON.stringify(data));
+                posting.fail( function(data) {
+                       
+                    alert(JSON.stringify(data));
+                    
+                    $(update_waiting_id).hide();
+                    
+                    $(form_id).fadeTo(1, 1);
+                    
+                });
+            
+            }
+            else
+            {
                 
-                $(update_waiting_id).hide();
+                data=$(this).serializeArray();
                 
-                $(form_id).fadeTo(1, 1);
+                $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: data,
+                  success: function (data) {
+                      
+                    $(update_waiting_id).hide();
+                    
+                    if(data.error==1)
+                    {
+                        $(error_text_id).show(function () {
+                            
+                            setTimeout(function () {
+                                
+                                $(error_text_id).fadeOut(2000);
+                                
+                            }, 3000);
+                            
+                        });
+                        
+                        $(form_id).fadeTo(1, 1);
+                    
+                        for(form in data.form)
+                        {
+                            
+                            $('#'+form+'_field_form').parent('p').children('.error').html(data.form[form]);
+                            
+                        }
+                        
+                    }
+                    else
+                    {
+                        
+                        if(success_callback)
+                        {
+                            
+                            success_callback(data);
+                            
+                        }
+                        
+                        $(update_id).show(function () {
+                            
+                            setTimeout(function () {
+                                
+                                $(update_id).fadeOut(2000);
+                                
+                            }, 3000);
+                            
+                        });
+                        
+                        $(form_id).fadeTo(1, 1);
+                        
+                    }
                 
-            });
+                },
+                  dataType: 'json'
+                }).fail( function(data) {
+                       
+                    alert(JSON.stringify(data));
+                    
+                    $(update_waiting_id).hide();
+                    
+                    $(form_id).fadeTo(1, 1);
+                    
+                });
+                
+            }
             
             return false;
             
