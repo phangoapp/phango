@@ -1,5 +1,7 @@
 <?php
 
+use PhangoApp\PhaUtils\Utils;
+
 function ModelFormView($arr_form, $fields=array())
 {
 
@@ -34,7 +36,7 @@ function ModelFormView($arr_form, $fields=array())
         {
         
             ?>
-                <?php echo $form->form(); ?>
+                <?php echo $form->form(); ?>               
             <?php
             echo "\n";
         
@@ -42,6 +44,7 @@ function ModelFormView($arr_form, $fields=array())
 
     }
     ?>
+    <?php echo Utils::set_csrf_key(); ?>
     </div>
     <?php
 
