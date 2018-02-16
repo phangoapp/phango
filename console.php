@@ -6,23 +6,24 @@ ini_set('html_errors', 0);
 
 require(__DIR__."/vendor/autoload.php");
 
-use PhangoApp\PhaRouter\Routes;
+use PhangoApp\PhaRouter2\Router;
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaView\View;
 use PhangoApp\PhaI18n\I18n;
 
-Routes::$base_path=__DIR__;
+Router::$base_path=__DIR__;
 
-chdir(Routes::$base_path);
+chdir(Router::$base_path);
 
 Utils::load_config('config_routes');
 Utils::load_config('config_i18n');
 Utils::load_config('config');
 Utils::load_config('config_views');
+Utils::load_config('config_apps');
 
 /**Load configurations from modules**/
 
-foreach(Routes::$apps as $admin_module)
+foreach(Router::$apps as $admin_module)
 {
     
     Utils::load_config('config', $path='vendor/'.$admin_module."/settings");

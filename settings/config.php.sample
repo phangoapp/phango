@@ -1,14 +1,16 @@
 <?php
 
 use PhangoApp\PhaModels\Webmodel;
-use PhangoApp\PhaRouter\Routes;
 use PhangoApp\PhaView\View;
+use PhangoApp\PhaRouter2\Router;
 
-Routes::$root_url='/';
+/*Routes::$root_url='/';
 
 Routes::$app='phangoapp/welcome';
 
-Routes::$apps=['phangoapp/welcome', 'phangoapp/lang', 'phangoapp/showmedia', 'phangoapp/admin'];
+Routes::$apps=['phangoapp/welcome', 'phangoapp/lang', 'phangoapp/showmedia', 'phangoapp/admin'];*/
+
+Router::$modules=['phangoapp/welcome'];
 
 /**
 * Configure database. You can configure multiple databases for different models.

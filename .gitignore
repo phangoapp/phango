@@ -7,4 +7,4 @@ settings/config.php
 settings/admin/*
 views/*
 !views/default
-
+settings/config_apps.php

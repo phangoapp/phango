@@ -1,15 +1,15 @@
 <?php
 
-use PhangoApp\PhaRouter\Routes;
+use PhangoApp\PhaRouter2\Router;
 
-Routes::$root_url='/';
+Router::$root_url='/';
 
-Routes::$app='phangoapp/welcome';
+Router::$app='phangoapp/welcome';
 
-Routes::$apps=['welcome'];
+Router::$apps=['welcome'];
 
-Routes::$base_path=getcwd();
+Router::$base_path=getcwd();
 
-Routes::$root_path=Routes::$root_path.'/vendor';
+Router::$root_path=Router::$base_path.'/vendor';
 
 ?>

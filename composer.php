@@ -15,10 +15,11 @@ $arr_composer=array(
     
     "minimum-stability" => "stable",
 
-    "repositories" => [array(
+    "repositories" => [
+       array(
             "type"=> "vcs",
-            "url"=> "https://github.com/phangoapp/pharouter.git"
-       ), 
+            "url"=> "https://github.com/phangoapp/pharouter2.git"
+        ),
        array(
             "type"=> "vcs",
             "url"=> "https://github.com/phangoapp/phaview.git"
@@ -63,8 +64,8 @@ $arr_composer=array(
 
     "require" => array(
 
-	"phangoapp/pharouter"=> "dev-master",
-        "phangoapp/phaview"=> "dev-master",
+    "phangoapp/pharouter2"=> "dev-master",
+    "phangoapp/phaview"=> "dev-master",
 	"phangoapp/phamodels"=> "dev-master",
 	"phangoapp/phautils"=> "dev-master",
 	"phangoapp/phai18n"=> "dev-master",
