@@ -15,8 +15,6 @@ $route->arr_finish_callbacks=array('PhangoApp\PhaModels\Webmodel::save_cache_que
 Utils::load_config('config_i18n');
 Utils::load_config('config_routes');
 Utils::load_config('config_apps');
-Utils::load_config('config');
-Utils::load_config('config_views');
 
 if(!defined('COOKIE_SESSION_NAME'))
 {
@@ -41,6 +39,9 @@ foreach(Router::$apps as $admin_module)
     Utils::load_config('config', $path='vendor/'.$admin_module."/settings");
     
 }
+
+Utils::load_config('config');
+Utils::load_config('config_views');
 
 date_default_timezone_set(PhangoApp\PhaTime\DateTime::$timezone);
 
