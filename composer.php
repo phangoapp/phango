@@ -77,7 +77,8 @@ $arr_composer=array(
 	"phangoapp/showmedia"=>"dev-master",
 	"ext-gd"=> "*",
 	"ext-libxml"=> "*",
-	"league/climate"=> "@stable"
+	"league/climate"=> "@stable",
+    "swiftmailer/swiftmailer"=> "^6.0"
 	
     )
 
