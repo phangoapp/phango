@@ -2,6 +2,7 @@
 
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaI18n\I18n;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
@@ -18,7 +19,7 @@ if(!is_dir($lang_path))
 
 }
 
-class I18nTest extends PHPUnit_Framework_TestCase
+class I18nTest extends TestCase
 {
 	public function testLoadLang()
 	{

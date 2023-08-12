@@ -8,6 +8,7 @@ use PhangoApp\PhaModels\CoreFields\EmailField;
 use PhangoApp\PhaModels\Forms\PasswordForm;
 use PhangoApp\PhaLibs\LoginClass;
 use PhangoApp\PhaModels\ExtraModels\UserPhangoModel;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
@@ -29,7 +30,7 @@ $login_class=new LoginClass($user_test, 'username', 'password', 'token', $arr_us
 
 $login_class->field_mail='email';
 
-class LoginTest extends PHPUnit_Framework_TestCase
+class LoginTest extends TestCase
 {
 
     public function testCreateTableUser()

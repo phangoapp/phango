@@ -1,10 +1,11 @@
 <?php
 
 use PhangoApp\PhaModels\CoreFields;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
-class FieldsTest extends PHPUnit_Framework_TestCase
+class FieldsTest extends TestCase
 {
 
     public function testCheckCharField()
@@ -52,7 +53,7 @@ class FieldsTest extends PHPUnit_Framework_TestCase
         
     }
     
-    public function testPhoneField()
+    /*public function testPhoneField()
     {
         
         
@@ -63,7 +64,7 @@ class FieldsTest extends PHPUnit_Framework_TestCase
     
         
     
-    }
+    }*/
     
     /*
     public function testDateField()

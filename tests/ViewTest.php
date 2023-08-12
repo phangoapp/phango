@@ -1,12 +1,13 @@
 <?php
 
 use PhangoApp\PhaView\View;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
 View::$cache_directory='tmp/cache';
 
-class ViewTest extends PHPUnit_Framework_TestCase
+class ViewTest extends TestCase
 {
     /*
     public function testObtainTimeStampField()

@@ -4,13 +4,14 @@ use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaI18n\I18n;
 use PhangoApp\PhaModels\CoreFields\I18nField;
 use PhangoApp\PhaModels\CoreFields\CharField;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
 Utils::load_config('config_i18n', '../settings');
 Utils::load_config('config', '../settings');
 
-class I18nFieldTest extends PHPUnit_Framework_TestCase
+class I18nFieldTest extends TestCase
 {
 	public function testI18nField()
 	{

@@ -4,6 +4,7 @@ use PhangoApp\PhaModels\Webmodel;
 use PhangoApp\PhaUtils\Utils;
 use PhangoApp\PhaModels\CoreFields\CharField;
 use PhangoApp\PhaModels\CoreFields\IntegerField;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
@@ -17,7 +18,7 @@ $table_test->register('type', new IntegerField());
 
 $table_test->fields_to_update=['name', 'lastname', 'type'];
 
-class WebmodelTest extends PHPUnit_Framework_TestCase
+class WebmodelTest extends TestCase
 {
 
 	public function testCreateTable()

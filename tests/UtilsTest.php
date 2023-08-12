@@ -2,12 +2,13 @@
 
 
 use PhangoApp\PhaUtils\Utils;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
 Utils::load_config('config', '../settings');
 
-class UtilsModTest extends PHPUnit_Framework_TestCase
+class UtilsModTest extends TestCase
 {
 	public function testSlugify()
 	{

@@ -4,7 +4,7 @@ $arr_composer=array(
 
     "name" => "phangoapp/framework",
     "description" => "A framework for create nice apps",
-    "php" => "^5.4|| ^7.0",
+    "php" => "^7.4|| ^8.2",
      "license" => "GPL",
     "authors"=> [
         array(
@@ -64,7 +64,7 @@ $arr_composer=array(
     "require" => array(
 
 	"phangoapp/pharouter"=> "dev-master",
-        "phangoapp/phaview"=> "dev-master",
+    "phangoapp/phaview"=> "dev-master",
 	"phangoapp/phamodels"=> "dev-master",
 	"phangoapp/phautils"=> "dev-master",
 	"phangoapp/phai18n"=> "dev-master",

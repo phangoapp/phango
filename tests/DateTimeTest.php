@@ -1,10 +1,11 @@
 <?php
 
 use PhangoApp\PhaTime;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
-class DateTimeTest extends PHPUnit_Framework_TestCase
+class DateTimeTest extends TestCase
 {
     /*
     public function testObtainTimeStampField()

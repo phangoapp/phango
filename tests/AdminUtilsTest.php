@@ -2,6 +2,7 @@
 
 use PhangoApp\PhaLibs\AdminUtils;
 use PhangoApp\PhaRouter\Routes;
+use PHPUnit\Framework\TestCase;
 
 include("../vendor/autoload.php");
 
@@ -13,7 +14,7 @@ if(!defined('ADMIN_FOLDER'))
 }
   
     
-class AdminUtilsTest extends PHPUnit_Framework_TestCase
+class AdminUtilsTest extends TestCase
 {
 	public function testAdminUtils()
 	{
